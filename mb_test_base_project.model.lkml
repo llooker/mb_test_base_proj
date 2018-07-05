@@ -20,6 +20,7 @@ explore: events {
   }
 }
 
+
 explore: inventory_items {
   join: products {
     type: left_outer
