@@ -82,7 +82,7 @@ view: users {
     sql: ${TABLE}.ZIP ;;
   }
 
-  dimension: address_full {
+  dimension: address_city_state_zip {
     type: string
     sql:  ${city} || ', ' || ${state} || ' ' ${zip};;
   }
