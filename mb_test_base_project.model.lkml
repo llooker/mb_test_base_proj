@@ -2,6 +2,8 @@ connection: "thelook_events"
 
 # include all the views
 include: "*.view"
+#### TEST
+
 
 datagroup: mb_test_base_project_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
