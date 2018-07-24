@@ -19,6 +19,7 @@ view: order_items {
       year
     ]
     sql: ${TABLE}.CREATED_AT ;;
+    description: "test desc"
   }
 
   dimension_group: delivered {
