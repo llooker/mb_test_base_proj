@@ -13,6 +13,7 @@ persist_with: mb_test_base_project_default_datagroup
 explore: distribution_centers {}
 
 explore: events {
+  description: "Events Explore"
   join: users {
     type: left_outer
     sql_on: ${events.user_id} = ${users.id} ;;
