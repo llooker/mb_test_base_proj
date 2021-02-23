@@ -1,5 +1,4 @@
-# connection: "thelook_events"
-connection: "biquery_publicdata_standard_sql"
+connection: "thelook_events"
 
 # include all the views
 include: "*.view"
@@ -21,6 +20,7 @@ explore: events {
   }
 }
 
+
 explore: inventory_items {
   join: products {
     type: left_outer
@@ -36,7 +36,6 @@ explore: inventory_items {
 }
 
 explore: order_items {
-
   join: inventory_items {
     type: left_outer
     sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
@@ -71,6 +70,3 @@ explore: products {
 }
 
 explore: users {}
-
-
-explore: cidr_lookup {}
