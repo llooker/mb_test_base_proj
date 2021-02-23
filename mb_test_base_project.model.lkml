@@ -2,7 +2,9 @@
 connection: "biquery_publicdata_standard_sql"
 
 # include all the views
-include: "*.view"
+include: "/**/*.view.lkml"
+#### TEST
+
 
 datagroup: mb_test_base_project_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -10,6 +12,7 @@ datagroup: mb_test_base_project_default_datagroup {
 }
 
 persist_with: mb_test_base_project_default_datagroup
+
 
 explore: distribution_centers {}
 
@@ -62,15 +65,54 @@ explore: order_items {
   }
 }
 
-explore: products {
-  join: distribution_centers {
-    type: left_outer
-    sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
-    relationship: many_to_one
-  }
-}
+
 
 explore: users {}
 
 
 explore: cidr_lookup {}
+
+# explore: distribution_centers_base {
+#   view_name: distribution_centers
+#   extension: required
+# }
+
+# explore: events_base {
+#   view_name: events
+#   extension: required
+#   description: "Events Explore testing testing"
+#   join: users {
+#     type: left_outer
+#     sql_on: ${events.user_id} = ${users.id} ;;
+#     relationship: many_to_one
+#   }
+
+# }
+
+
+# explore: inventory_items_base {
+#   view_name: inventory_items
+#   extension: required
+#   join: products {
+#     type: left_outer
+#     sql_on: ${inventory_items.product_id} = ${products.id} ;;
+#     relationship: many_to_one
+#   }
+
+#   join: distribution_centers {
+#     type: left_outer
+#     sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
+#     relationship: many_to_one
+#   }
+# }
+
+# explore: products {
+#   extension: required
+#   join: distribution_centers {
+#     type: left_outer
+#     sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
+#     relationship: many_to_one
+#   }
+# }
+
+# explore: users {}
