@@ -11,6 +11,7 @@ view: inventory_items {
     required_access_grants: [can_see_cost]
     type: number
     sql: ${TABLE}.COST ;;
+    value_format_name: usd
   }
 
   dimension_group: created {

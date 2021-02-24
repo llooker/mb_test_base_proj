@@ -9,8 +9,8 @@ include: "/**/*.view.lkml"
 include: "/**/*.explores.lkml"
 
 include: "all_access_grants.lkml"
-#### TEST
 
+include: "*.dashboard"
 
 datagroup: mb_test_base_project_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
