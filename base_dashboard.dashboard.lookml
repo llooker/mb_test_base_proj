@@ -12,7 +12,6 @@
     col: 0
     width: 20
     height: 2
-
   - title: Last 30 days Orders
     name: Last 30 days Orders
     model: mb_test_base_project
