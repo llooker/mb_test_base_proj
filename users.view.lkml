@@ -1,5 +1,5 @@
 view: users {
-  sql_table_name: thelook_events.USERS ;;
+  sql_table_name: USERS ;;
 
   dimension: id {
     primary_key: yes
@@ -38,21 +38,25 @@ view: users {
   }
 
   dimension: email {
+    required_access_grants: [can_see_pii]
     type: string
     sql: ${TABLE}.EMAIL ;;
   }
 
   dimension: first_name {
+    required_access_grants: [can_see_pii]
     type: string
     sql: ${TABLE}.FIRST_NAME ;;
   }
 
   dimension: gender {
+    required_access_grants: [can_see_pii]
     type: string
     sql: ${TABLE}.GENDER ;;
   }
 
   dimension: last_name {
+    required_access_grants: [can_see_pii]
     type: string
     sql: ${TABLE}.LAST_NAME ;;
   }

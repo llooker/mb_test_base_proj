@@ -1,5 +1,5 @@
 view: products {
-  sql_table_name: thelook_events.PRODUCTS ;;
+  sql_table_name: PRODUCTS ;;
 
   dimension: id {
     primary_key: yes
@@ -18,6 +18,7 @@ view: products {
   }
 
   dimension: cost {
+    required_access_grants: [can_see_cost]
     type: number
     sql: ${TABLE}.COST ;;
   }
