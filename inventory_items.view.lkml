@@ -8,6 +8,7 @@ view: inventory_items {
   }
 
   dimension: cost {
+    required_access_grants: [can_see_cost]
     type: number
     sql: ${TABLE}.COST ;;
   }

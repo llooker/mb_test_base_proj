@@ -49,6 +49,12 @@ view: users {
     sql: ${TABLE}.FIRST_NAME ;;
   }
 
+  dimension: full_name {
+    required_access_grants: [can_see_pii]
+    type: string
+    sql: concat(${first_name}, cast(' ' as char), ${last_name}) ;;
+  }
+
   dimension: gender {
     required_access_grants: [can_see_pii]
     type: string
