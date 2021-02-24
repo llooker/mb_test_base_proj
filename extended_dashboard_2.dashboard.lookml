@@ -1,4 +1,5 @@
 - dashboard: extended_dashboard_2
+  include: base_dashboard.dashboard
   title: Extended Dashboard 2
   layout: newspaper
   preferred_viewer: dashboards-next
